@@ -1,0 +1,98 @@
+Kafka Commands
+
+
+1. Starting the zoo-keeper
+$ bin/zookeeper-server-start.sh config/zookeeper.properties
+
+
+2. Starting the Kafka Server
+$ bin/kafka-server-start.sh config/server.properties
+
+
+3. Creating a topic
+ 
+$ bin/kafka-topics.sh --create --topic hello --bootstrap-server localhost:9092
+
+
+4. Describing topics
+$ bin/kafka-topics.sh --describe --topic hello --bootstrap-server localhost:9092
+
+
+5. Producing messages to a topic.
+bin/kafka-console-producer.sh --topic hello --bootstrap-server localhost:9092
+
+6. Consuming messages from a topic.
+$ bin/kafka-console-consumer.sh --topic hello --from-beginning --bootstrap-server localhost:9092
+
+
+
+Client   -----> Server X
+
+
+Client ---->   Load Balancer   Server1, Server 2 , Server 3
+
+
+Request an asset  ---> An email should be triggered and sent to the client who is requesting for an asset.
+
+
+
+Request an asset ---> an event would be generated and kafka broker ---> consumer will pick up the message and send in an email.
+Producer  -----> Message broker ---> COnsumer (message consumer )
+
+
+
+Topic - hello  --- partitioned 3 partition , 5 node partition 
+3 node cluster 
+
+hello  
+1 milliom message -> 1 hour 
+
+3 parition 
+20 minutes
+0.33 M --> parition1 - consumer1 
+0.33 M ---> parition 2 - consumer 2 
+0.33 M --> parition3 - consume  
+
+
+Application1
+
+
+
+Appplication 2 
+
+
+
+Application 3 
+
+
+Application n
+
+
+Kafka 
+
+
+
+Consumer 
+
+
+In 
+
+
+Dashboard and do some analytics
+
+
+hello 
+
+
+create user --> user created
+add proile --> profile 
+
+
+
+My SQL    ---> Cassandra 
+
+
+MySQL   -----> Kafka -----> Cassadnra // 
+
+
+

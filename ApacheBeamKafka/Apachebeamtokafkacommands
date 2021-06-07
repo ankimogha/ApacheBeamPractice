@@ -1,0 +1,21 @@
+bin/kafka-topics.sh --create \
+    --zookeeper localhost:2181 \
+    --replication-factor 1 \
+    --partitions 1 \
+    --topic input2
+    
+ bin/kafka-topics.sh --describe --topic input2 --bootstrap-server localhost:9092
+ 
+ bin/kafka-console-producer.sh --topic input2 --bootstrap-server localhost:9092
+ 
+ bin/kafka-console-consumer.sh --topic input2 --from-beginning --bootstrap-server localhost:9092
+ 
+ bin/kafka-topics.sh --create --topic beamtopic --bootstrap-server localhost:9092
+ 
+ 
+ {"deviceId":"devA","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"75.0","unit":"F"}
+ {"deviceId":"devB","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"70.0","unit":"F"}
+ {"deviceId":"devC","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"85.0","unit":"F"}
+ {"deviceId":"devD","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"73.0","unit":"F"}
+ {"deviceId":"devE","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"81.0","unit":"F"}
+ {"deviceId":"devF","name":"Building_A","description":"Building A floor 4","eventtime":"114455678900","temperature":"75.0","unit":"F"}

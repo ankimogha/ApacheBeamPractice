@@ -1,0 +1,1 @@
+java -cp ApacheBeamPractice1-1.0-SNAPSHOT-jar-with-dependencies.jar LocalFileExample --inputFile="/home/knoldus/IdeaProjects/ApacheBeamPractice1/input.csv" --outputFile="/home/knoldus/IdeaProjects/ApacheBeamPractice1/output.csv" --extension=".csv"
